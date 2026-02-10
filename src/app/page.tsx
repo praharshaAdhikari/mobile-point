@@ -1,0 +1,40 @@
+import Brands from "@/components/home/brands";
+import Browse from "@/components/home/browse";
+import CategoryGrid from "@/components/home/category-grid";
+import CuratedItems from "@/components/home/curated-items";
+import ItemsCarousel from "@/components/home/items-carousel";
+import ItemsTabs from "@/components/home/items-tabs";
+import Search from "@/components/home/search";
+import TopCategories from "@/components/home/top-categories";
+import TopItems from "@/components/home/top-items";
+
+const Home = () => {
+  return (
+    <div>
+      <div className="mb-4">
+        <Search />
+      </div>
+      <div className="my-4">
+        <Browse />
+      </div>
+      <div className="capsule my-4 grid gap-4 grid-cols-2 px-0">
+        <Brands />
+        <TopCategories />
+      </div>
+      <div className="my-4">
+        <ItemsTabs />
+      </div>
+      <div className="my-4">
+        <CuratedItems />
+      </div>
+      <div className="my-4">
+        <TopItems />
+      </div>
+      <div className="my-4">
+        <CategoryGrid />
+      </div>
+    </div>
+  );
+};
+
+export default Home;
