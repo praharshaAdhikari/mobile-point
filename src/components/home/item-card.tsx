@@ -152,7 +152,7 @@ const ItemCard = ({ item }: { item: Item }) => {
     : 0;
 
   return (
-    <div className="hover:outline hover:outline-[#E2E4EB] rounded-lg p-2 cursor-pointer">
+    <div className="p-3 cursor-pointer h-full flex flex-col">
       <div className="h-50 w-full relative space-y-4">
         <Image
           src={item.variants[currentVariant].image}
