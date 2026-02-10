@@ -220,18 +220,6 @@ const ItemCard = ({ item }: { item: Item }) => {
           onVariantChange={setCurrentVariant}
         />
       )}
-      {item.tag.length > 0 && (
-        <div className="flex flex-wrap gap-2 pt-4">
-          {item.tag.map((t, idx) => (
-            <span
-              key={idx}
-              className="inline-block px-2.5 py-1 text-xs font-bold rounded-md bg-[#22DD22]/10 text-[#22DD22]"
-            >
-              {t}
-            </span>
-          ))}
-        </div>
-      )}
     </div>
   );
 };
