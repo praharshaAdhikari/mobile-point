@@ -43,9 +43,9 @@ async function CategoryPage({ params }: CategoryPageProps) {
   );
 
   // Get featured item (first best seller or first item)
-  const featuredItem = categoryItems.find(
-    (item) => item.tag.includes("Best Seller")
-  ) || categoryItems[0];
+  const featuredItem =
+    categoryItems.find((item) => item.tag.includes("Best Seller")) ||
+    categoryItems[0];
 
   return (
     <div className="space-y-6">
@@ -59,7 +59,7 @@ async function CategoryPage({ params }: CategoryPageProps) {
       </div>
 
       {/* Featured Section */}
-      <CategoryFeatured item={featuredItem} categoryName={categoryName} />
+      {featuredItem && <CategoryFeatured item={featuredItem} categoryName={categoryName} />}
 
       {/* Popular Categories Section */}
       <PopularCategories />
