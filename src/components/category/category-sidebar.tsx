@@ -29,22 +29,80 @@ const CategorySidebar = ({ activeCategoryLink }: { activeCategoryLink: string })
       })),
     },
     {
+      id: "brand",
+      label: "By Brand",
+      items: [
+        { label: "Apple", value: "apple" },
+        { label: "Samsung", value: "samsung" },
+        { label: "Sony", value: "sony" },
+        { label: "LG", value: "lg" },
+        { label: "Dell", value: "dell" },
+        { label: "HP", value: "hp" },
+        { label: "Lenovo", value: "lenovo" },
+        { label: "Asus", value: "asus" },
+      ],
+    },
+    {
       id: "price",
       label: "Price Range",
       items: [
         { label: "Under NRS 5,000", value: "0-5000" },
         { label: "NRS 5,000 - NRS 10,000", value: "5000-10000" },
         { label: "NRS 10,000 - NRS 20,000", value: "10000-20000" },
-        { label: "Above NRS 20,000", value: "20000+" },
+        { label: "NRS 20,000 - NRS 50,000", value: "20000-50000" },
+        { label: "Above NRS 50,000", value: "50000+" },
+      ],
+    },
+    {
+      id: "rating",
+      label: "By Rating",
+      items: [
+        { label: "★★★★★ 5 Stars", value: "5" },
+        { label: "★★★★☆ 4+ Stars", value: "4" },
+        { label: "★★★☆☆ 3+ Stars", value: "3" },
+        { label: "★★☆☆☆ 2+ Stars", value: "2" },
       ],
     },
     {
       id: "availability",
-      label: "Availability",
+      label: "By Availability",
       items: [
         { label: "In Stock", value: "in-stock" },
         { label: "Pre Order", value: "pre-order" },
         { label: "Contact for Availability", value: "contact" },
+      ],
+    },
+    {
+      id: "color",
+      label: "By Color",
+      items: [
+        { label: "Black", value: "black" },
+        { label: "White", value: "white" },
+        { label: "Silver", value: "silver" },
+        { label: "Gold", value: "gold" },
+        { label: "Blue", value: "blue" },
+        { label: "Red", value: "red" },
+      ],
+    },
+    {
+      id: "storage",
+      label: "By Storage",
+      items: [
+        { label: "64GB", value: "64gb" },
+        { label: "128GB", value: "128gb" },
+        { label: "256GB", value: "256gb" },
+        { label: "512GB", value: "512gb" },
+        { label: "1TB", value: "1tb" },
+      ],
+    },
+    {
+      id: "features",
+      label: "By Features",
+      items: [
+        { label: "Free Shipping", value: "free-shipping" },
+        { label: "Free Gift", value: "free-gift" },
+        { label: "Warranty", value: "warranty" },
+        { label: "Fast Delivery", value: "fast-delivery" },
       ],
     },
   ];
