@@ -51,6 +51,7 @@ export const ITEMS = [
     contact: false,
     freeGift: false,
     tag: ["Best Seller", "New In", "Popular"],
+    category: "tablets",
     variants: [
       {
         color: "Default",
