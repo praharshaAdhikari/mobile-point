@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { BodyText, Heading } from "../shared/Typography";
 import { ChevronDown } from "@hugeicons/core-free-icons";
