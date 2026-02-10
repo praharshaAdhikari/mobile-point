@@ -48,32 +48,36 @@ async function CategoryPage({ params }: CategoryPageProps) {
     categoryItems[0];
 
   return (
-    <div className="space-y-6">
-      {/* Breadcrumb */}
-      <div className="text-sm text-slate-600 mb-4">
-        <a href="/" className="hover:text-[#C40EDC] transition-colors">
-          Home
-        </a>
-        <span className="mx-2">/</span>
-        <span className="text-slate-900 font-medium">{categoryName}</span>
-      </div>
-
-      {/* Featured Section */}
-      {featuredItem && <CategoryFeatured item={featuredItem} categoryName={categoryName} />}
-
-      {/* Popular Categories Section */}
-      <PopularCategories />
-
-      {/* Main Content Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-        {/* Sidebar */}
-        <div className="lg:col-span-1">
-          <CategorySidebar activeCategoryLink={categoryLink} />
+    <div className="capsule my-4">
+      <div className="space-y-6">
+        {/* Breadcrumb */}
+        <div className="text-sm text-slate-600 mb-4">
+          <a href="/" className="hover:text-[#C40EDC] transition-colors">
+            Home
+          </a>
+          <span className="mx-2">/</span>
+          <span className="text-slate-900 font-medium">{categoryName}</span>
         </div>
 
-        {/* Products */}
-        <div className="lg:col-span-3">
-          <CategoryProducts items={categoryItems} />
+        {/* Featured Section */}
+        {featuredItem && (
+          <CategoryFeatured item={featuredItem} categoryName={categoryName} />
+        )}
+
+        {/* Popular Categories Section */}
+        <PopularCategories />
+
+        {/* Main Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+          {/* Sidebar */}
+          <div className="lg:col-span-1">
+            <CategorySidebar activeCategoryLink={categoryLink} />
+          </div>
+
+          {/* Products */}
+          <div className="lg:col-span-3">
+            <CategoryProducts items={categoryItems} />
+          </div>
         </div>
       </div>
     </div>
