@@ -37,8 +37,10 @@ async function CategoryPage({ params }: CategoryPageProps) {
   const categoryName =
     CATEGORIES.find((c) => c.link === categoryLink)?.label || "Products";
 
-  // Use all items for the category (in a real app, you'd filter by category)
-  const categoryItems = ITEMS;
+  // Filter items by category
+  const categoryItems = ITEMS.filter(
+    (item) => item.category === resolvedParams.category
+  );
 
   // Get featured item (first best seller or first item)
   const featuredItem = categoryItems.find(
