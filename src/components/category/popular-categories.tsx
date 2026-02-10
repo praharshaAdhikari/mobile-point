@@ -7,34 +7,38 @@ import Link from "next/link";
 const PopularCategories = () => {
   return (
     <div className="p-7 rounded-xl bg-white shadow-sm mb-6">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between mb-6">
         <Heading variant="h3" className="uppercase font-bold">
-          {"Popular Categories"}
+          {"Categories"}
         </Heading>
-        <Link href={"/"} className="text-[#666666] hover:underline">
-          <BodyText variant="b_small">{"View All"}</BodyText>
-        </Link>
       </div>
 
-      <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 mt-6">
-        {CATEGORIES.slice(0, 4).map((cat, index) => (
+      <div className="w-full space-y-2">
+        {CATEGORIES.slice(0, 8).map((cat, index) => (
           <Link
             key={index}
             href={cat.link}
-            className="flex flex-col items-center justify-center relative h-16 sm:h-40 hover:opacity-80 transition-opacity"
+            className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-200"
           >
-            <div className="relative w-full h-full">
-              {cat.image && (
+            {cat.image && (
+              <div className="relative w-8 h-8 flex-shrink-0">
                 <Image
                   src={cat.image}
                   alt={cat.label}
                   fill
                   className="object-contain grayscale hover:grayscale-0 transition-all duration-300"
                 />
-              )}
-            </div>
-            <BodyText variant="b_three" weight="bold">
+              </div>
+            )}
+            <BodyText
+              variant="b_two"
+              weight="medium"
+              className="text-slate-700 hover:text-[#C40EDC] transition-colors flex-grow"
+            >
               {cat.label}
+            </BodyText>
+            <BodyText variant="b_small" className="text-slate-400">
+              →
             </BodyText>
           </Link>
         ))}
