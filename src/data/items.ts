@@ -7,6 +7,7 @@ export type Item = {
   preOrder: boolean;
   contact: boolean;
   tag: string[];
+  category: string;
   variants: {
     color: string;
     price: number;
@@ -25,6 +26,7 @@ export const ITEMS = [
     preOrder: false,
     contact: false,
     tag: ["Best Seller", "New In", "Popular"],
+    category: "audio",
     variants: [
       {
         color: "Black",
@@ -49,6 +51,7 @@ export const ITEMS = [
     contact: false,
     freeGift: false,
     tag: ["Best Seller", "New In", "Popular"],
+    category: "tablets",
     variants: [
       {
         color: "Default",
@@ -67,6 +70,7 @@ export const ITEMS = [
     preOrder: false,
     contact: false,
     tag: ["Best Seller", "New In"],
+    category: "audio",
     variants: [
       {
         color: "Black",
@@ -91,6 +95,7 @@ export const ITEMS = [
     preOrder: false,
     contact: false,
     tag: ["Best Seller", "Popular"],
+    category: "mobile-phones",
     variants: [
       {
         color: "Default",
@@ -109,6 +114,7 @@ export const ITEMS = [
     preOrder: false,
     contact: true,
     tag: ["New In", "Popular"],
+    category: "audio",
     variants: [
       {
         color: "Black",
@@ -133,6 +139,7 @@ export const ITEMS = [
     preOrder: false,
     contact: false,
     tag: ["Best Seller"],
+    category: "tablets",
     variants: [
       {
         color: "Default",
@@ -151,6 +158,7 @@ export const ITEMS = [
     preOrder: false,
     contact: false,
     tag: ["Best Seller", "New In", "Popular"],
+    category: "audio",
     variants: [
       {
         color: "Black",
@@ -175,6 +183,7 @@ export const ITEMS = [
     preOrder: true,
     contact: false,
     tag: ["Best Seller", "Popular"],
+    category: "tablets",
     variants: [
       {
         color: "Default",

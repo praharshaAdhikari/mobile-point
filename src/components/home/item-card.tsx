@@ -152,7 +152,7 @@ const ItemCard = ({ item }: { item: Item }) => {
     : 0;
 
   return (
-    <div className="hover:outline hover:outline-[#E2E4EB] rounded-lg p-2 cursor-pointer">
+    <div className="p-3 cursor-pointer h-full flex flex-col">
       <div className="h-50 w-full relative space-y-4">
         <Image
           src={item.variants[currentVariant].image}
@@ -167,6 +167,13 @@ const ItemCard = ({ item }: { item: Item }) => {
             </BodyText>
             <BodyText variant="b_small" className="leading-4!" weight="bold">
               {item.discount * 100 + "%"}
+            </BodyText>
+          </div>
+        )}
+        {item.tag.length > 0 && !item.discount && (
+          <div className="inset-0 absolute top-4 left-7 w-16 h-fit bg-[#22DD22] text-white text-left rounded-md px-2 py-1">
+            <BodyText variant="b_xs" className="leading-4!" weight="bold">
+              {item.tag[0]}
             </BodyText>
           </div>
         )}
