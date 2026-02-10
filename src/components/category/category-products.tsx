@@ -35,7 +35,12 @@ const CategoryProducts = ({ items }: { items: Item[] }) => {
       {/* Products Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {currentItems.map((item) => (
-          <ItemCard key={item.id} item={item} />
+          <div
+            key={item.id}
+            className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow"
+          >
+            <ItemCard item={item} />
+          </div>
         ))}
       </div>
 
