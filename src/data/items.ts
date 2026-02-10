@@ -26,6 +26,7 @@ export const ITEMS = [
     preOrder: false,
     contact: false,
     tag: ["Best Seller", "New In", "Popular"],
+    category: "audio",
     variants: [
       {
         color: "Black",
