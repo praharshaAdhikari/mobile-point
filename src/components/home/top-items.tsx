@@ -26,7 +26,7 @@ const TopItems = () => {
           />
         </div>
         <div className="flex-1 grid grid-cols-3 gap-6">
-          {CATEGORIES.map((category) => (
+          {TOP_CATEGORIES.map((category) => (
             <div
               key={category.id}
               className="flex justify-between cursor-pointer hover:outline hover:outline-[#E2E4EB] rounded-xl p-2"
