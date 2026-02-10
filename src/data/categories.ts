@@ -1,77 +1,77 @@
 export const CATEGORIES = [
   {
     label: "Laptops",
-    link: "/",
+    link: "/laptops",
     image: "/images/categories/category2.png",
   },
   {
     label: "Audio",
-    link: "/",
+    link: "/audio",
     image: "/images/categories/category3.png",
   },
   {
     label: "Monitors",
-    link: "/",
+    link: "/monitors",
     image: "/images/categories/category4.png",
   },
   {
     label: "PC Gaming",
-    link: "/",
+    link: "/pc-gaming",
     image: "/images/categories/category1.png",
   },
   {
     label: "Mobile Phones",
-    link: "/",
+    link: "/mobile-phones",
     image: "",
   },
   {
     label: "Accessories",
-    link: "/",
+    link: "/accessories",
     image: "",
   },
   {
     label: "Tablets",
-    link: "/",
+    link: "/tablets",
     image: "",
   },
   {
     label: "Smart Home",
-    link: "/",
+    link: "/smart-home",
     image: "",
   },
   {
     label: "Home Appliances",
-    link: "/",
+    link: "/home-appliances",
     image: "",
   },
   {
     label: "Home Decor",
-    link: "/",
+    link: "/home-decor",
     image: "",
   },
   {
     label: "Gaming & VR",
-    link: "/",
+    link: "/gaming-vr",
     image: "",
   },
   {
     label: "Wearable Tech",
-    link: "/",
+    link: "/wearable-tech",
     image: "",
   },
   {
     label: "Cameras",
-    link: "/",
+    link: "/cameras",
     image: "",
   },
   {
     label: "Personal Care",
-    link: "/",
+    link: "/personal-care",
     image: "",
   },
   {
     label: "Health & Fitness",
-    link: "/",
+    link: "/health-fitness",
     image: "",
   },
 ];
