@@ -7,6 +7,7 @@ export type Item = {
   preOrder: boolean;
   contact: boolean;
   tag: string[];
+  category: string;
   variants: {
     color: string;
     price: number;
