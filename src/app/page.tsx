@@ -8,12 +8,9 @@ import Search from "@/components/home/search";
 import TopCategories from "@/components/home/top-categories";
 import TopItems from "@/components/home/top-items";
 
-const Home = () => {
+const Homepage = () => {
   return (
     <div>
-      <div className="mb-4">
-        <Search />
-      </div>
       <div className="my-4">
         <Browse />
       </div>
@@ -37,4 +34,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Homepage;

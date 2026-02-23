@@ -8,11 +8,11 @@ export const crAxios = axios.create({
 });
 
 // Add request interceptor to log actual URLs being called
-crAxios.interceptors.request.use((request:any) => {
+crAxios.interceptors.request.use((request: any) => {
   // Add trailing slash if it doesn't exist and it's not the base URL
-  if (request.url && !request.url.endsWith('/') && !request.url.includes('?')) {
-    request.url = request.url + '/';
+  if (request.url && !request.url.endsWith("/") && !request.url.includes("?")) {
+    request.url = request.url + "/";
   }
-  console.log('Final request URL:', `${request.baseURL}${request.url}`);
+  console.log("Final request URL:", `${request.baseURL}${request.url}`);
   return request;
 });

@@ -1,77 +1,84 @@
-export const CATEGORIES = [
-  {
-    label: "Laptops",
-    link: "/laptops",
-    image: "/images/categories/category2.png",
-  },
-  {
-    label: "Audio",
-    link: "/audio",
-    image: "/images/categories/category3.png",
-  },
-  {
-    label: "Monitors",
-    link: "/monitors",
-    image: "/images/categories/category4.png",
-  },
-  {
-    label: "PC Gaming",
-    link: "/pc-gaming",
-    image: "/images/categories/category1.png",
-  },
-  {
-    label: "Mobile Phones",
-    link: "/mobile-phones",
-    image: "",
-  },
-  {
-    label: "Accessories",
-    link: "/accessories",
-    image: "",
-  },
-  {
-    label: "Tablets",
-    link: "/tablets",
-    image: "",
-  },
-  {
-    label: "Smart Home",
-    link: "/smart-home",
-    image: "",
-  },
-  {
-    label: "Home Appliances",
-    link: "/home-appliances",
-    image: "",
-  },
-  {
-    label: "Home Decor",
-    link: "/home-decor",
-    image: "",
-  },
-  {
-    label: "Gaming & VR",
-    link: "/gaming-vr",
-    image: "",
-  },
-  {
-    label: "Wearable Tech",
-    link: "/wearable-tech",
-    image: "",
-  },
-  {
-    label: "Cameras",
-    link: "/cameras",
-    image: "",
-  },
-  {
-    label: "Personal Care",
-    link: "/personal-care",
-    image: "",
-  },
-  {
-    label: "Health & Fitness",
-    link: "/health-fitness",
-    image: "",
-  },
-];
+export const CATEGORIES = {
+  count: 6,
+  next: null,
+  previous: null,
+  results: [
+    {
+      id: 4,
+      name: "Airbuds",
+      slug: "airbuds",
+      is_featured: true,
+      image: "https://api.gowell.edu.np/media/categories/airbuds.jfif",
+      description: "<p>Best airbuds</p>",
+      parent: null,
+      children: [],
+      is_active: true,
+      total_products: 0,
+    },
+    {
+      id: 1,
+      name: "Apple Ipad",
+      slug: "apple-ipad",
+      is_featured: true,
+      image: "https://api.gowell.edu.np/media/categories/ipad.jpg",
+      description: "<p>IPAD</p>",
+      parent: null,
+      children: [],
+      is_active: true,
+      total_products: 0,
+    },
+    {
+      id: 6,
+      name: "Charger",
+      slug: "charger",
+      is_featured: true,
+      image:
+        "https://api.gowell.edu.np/media/categories/mobile-charger-adapter-smartphone-chargers-260nw-2523991419.webp",
+      description:
+        "<p><strong>Fast &amp; Reliable Charger</strong> &ndash; Quick charging with universal compatibility for all your devices.</p>",
+      parent: null,
+      children: [],
+      is_active: true,
+      total_products: 0,
+    },
+    {
+      id: 2,
+      name: "Iphone",
+      slug: "iphone",
+      is_featured: true,
+      image: "https://api.gowell.edu.np/media/categories/ihn.jpg",
+      description: "<p>Best Iphone</p>",
+      parent: null,
+      children: [],
+      is_active: true,
+      total_products: 1,
+    },
+    {
+      id: 3,
+      name: "Laptop",
+      slug: "laptop",
+      is_featured: true,
+      image:
+        "https://api.gowell.edu.np/media/categories/FUi2wwNdyFSwShZZ7LaqWf.jpg",
+      description:
+        "<p><strong>Best Value Laptop</strong> &ndash; Affordable, fast, and reliable for daily work, study, and browsing.</p>",
+      parent: null,
+      children: [],
+      is_active: true,
+      total_products: 3,
+    },
+    {
+      id: 5,
+      name: "Mobile",
+      slug: "mobiles",
+      is_featured: true,
+      image: "https://api.gowell.edu.np/media/categories/4987.avif",
+      description:
+        "<p><strong>Smart Buy Mobile</strong> &ndash; Best balance of performance and price for students and everyday users.</p>",
+      parent: null,
+      children: [],
+      is_active: true,
+      total_products: 1,
+    },
+  ],
+};

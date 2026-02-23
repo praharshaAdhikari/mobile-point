@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { CATEGORIES } from "@/data/categories";
+import useCategory from "@/api/hooks/useCategory";
 import { ArrowRight01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { BodyText, Heading } from "../shared/Typography";
@@ -8,6 +9,24 @@ import { BodyText, Heading } from "../shared/Typography";
 const SALE = "40% OFF";
 
 const Browse = () => {
+  // const { data, isLoading, isError } = useCategory();
+
+  // if (isLoading) {
+  //   return (
+  //     <div className="flex items-center justify-center">
+  //       <BodyText variant="b_small">{"Loading..."}</BodyText>
+  //     </div>
+  //   );
+  // }
+
+  // if (isError) {
+  //   return (
+  //     <div className="flex items-center justify-center">
+  //       <BodyText variant="b_small">{"Error loading categories"}</BodyText>
+  //     </div>
+  //   );
+  // }
+  const data = CATEGORIES;
   return (
     <div className="capsule p-0 grid grid-cols-1 md:grid-cols-4 md:grid-rows-9 gap-4 h-screen max-h-212.5">
       {/* Categories Menu */}
@@ -21,10 +40,10 @@ const Browse = () => {
         </BodyText>
         <nav className="flex-1 overflow-y-auto pr-2 custom-scrollbar">
           <div className="flex flex-col gap-1">
-            {CATEGORIES.map((category, index) => (
+            {data.results.map((category, index) => (
               <Link
                 key={index}
-                href={category.link}
+                href={category.slug}
                 className="group flex items-center justify-between py-2 px-3 rounded-lg hover:bg-slate-50 transition-all duration-300"
               >
                 <BodyText
@@ -32,7 +51,7 @@ const Browse = () => {
                   weight="medium"
                   className="text-slate-600 group-hover:text-blue-600 transition-colors"
                 >
-                  {category.label}
+                  {category.name}
                 </BodyText>
                 <HugeiconsIcon
                   icon={ArrowRight01Icon}
