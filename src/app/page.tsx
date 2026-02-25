@@ -2,6 +2,7 @@ import Brands from "@/components/home/brands";
 import Browse from "@/components/home/browse";
 import CategoryGrid from "@/components/home/category-grid";
 import CuratedItems from "@/components/home/curated-items";
+import DealsOfTheDay from "@/components/home/deals-of-the-day";
 import ItemsCarousel from "@/components/home/items-carousel";
 import ItemsTabs from "@/components/home/items-tabs";
 import Search from "@/components/home/search";
@@ -17,6 +18,9 @@ const Homepage = () => {
       <div className="capsule my-4 grid gap-4 grid-cols-2 px-0">
         <Brands />
         <TopCategories />
+      </div>
+      <div className="my-4">
+        <DealsOfTheDay />
       </div>
       <div className="my-4">
         <ItemsTabs />
