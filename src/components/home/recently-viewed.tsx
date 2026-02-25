@@ -4,6 +4,7 @@ import { Heading, BodyText } from "@/components/shared/Typography";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
+import useVisibleItems from "@/hooks/useVisibleItems";
 
 interface RecentlyViewedItem {
   id: string;
@@ -20,28 +21,28 @@ const RECENTLY_VIEWED_ITEMS: RecentlyViewedItem[] = [
     id: "1",
     name: "Xomie Remit 8 Sport Water Resistance Watch",
     price: 4200,
-    image: "/placeholder.svg?height=180&width=160",
+    image: "/images/items/headphone.jpg",
     badge: "NEW",
   },
   {
     id: "2",
     name: "Microte Surface 2.0 Laptop",
     price: 94000,
-    image: "/placeholder.svg?height=180&width=160",
+    image: "/images/items/headphone.jpg",
     badge: "NEW",
   },
   {
     id: "3",
     name: "aPod Pro Tablet 2023 LTE + Wifi, GPS Cellular 12.9 Inch, 512GB",
     price: 12000,
-    image: "/placeholder.svg?height=180&width=160",
+    image: "/images/items/headphone.jpg",
   },
   {
     id: "4",
     name: "SROK Smart Phone 128GB, Oled Retina",
     price: 20000,
     originalPrice: 25000,
-    image: "/placeholder.svg?height=180&width=160",
+    image: "/images/items/headphone.jpg",
     badge: "SAVE",
     discountPercentage: 20,
   },
@@ -49,12 +50,12 @@ const RECENTLY_VIEWED_ITEMS: RecentlyViewedItem[] = [
     id: "5",
     name: "Xomie Remit 8 Sport Water Resistance Watch",
     price: 4200,
-    image: "/placeholder.svg?height=180&width=160",
+    image: "/images/items/headphone.jpg",
   },
 ];
 
 const RecentlyViewed = () => {
-  const CAROUSEL_VISIBLE_ITEMS = 5;
+  const CAROUSEL_VISIBLE_ITEMS = useVisibleItems({ sm: 2, md: 3, lg: 5 });
   const [currentIndex, setCurrentIndex] = React.useState(0);
   const [isTransitioning, setIsTransitioning] = React.useState(false);
   const carouselRef = React.useRef<HTMLDivElement>(null);
@@ -88,16 +89,21 @@ const RecentlyViewed = () => {
   const isPrevDisabled = currentIndex === 0;
   const isNextDisabled = currentIndex >= maxIndex;
 
+  // Reset index if it exceeds new maxIndex on resize
+  React.useEffect(() => {
+    if (currentIndex > maxIndex) setCurrentIndex(maxIndex);
+  }, [maxIndex, currentIndex]);
+
   return (
-    <div className="w-full">
+    <div className="capsule bg-white rounded-xl p-6 shadow-sm">
       {/* Header */}
       <div className="flex items-center justify-between mb-6 px-4">
         <Heading variant="h3" className="font-bold text-[#1A1A1A] uppercase">
-          Your Recently Viewed
+          {"Your Recently Viewed"}
         </Heading>
         <button className="text-[#666666] hover:text-[#1A1A1A] transition-colors">
           <BodyText variant="b_small" className="text-[#666666]">
-            View All
+            {"View All"}
           </BodyText>
         </button>
       </div>
@@ -147,13 +153,12 @@ const RecentlyViewed = () => {
                   {item.badge && (
                     <div
                       className={`absolute top-2 left-2 px-2 py-1 rounded-md text-white text-xs font-bold ${
-                        item.badge === "NEW"
-                          ? "bg-[#1A1A1A]"
-                          : "bg-[#D500D5]"
+                        item.badge === "NEW" ? "bg-[#1A1A1A]" : "bg-[#D500D5]"
                       }`}
                     >
                       {item.badge === "NEW" && "NEW"}
-                      {item.badge === "SAVE" && `SAVE ${item.discountPercentage}%`}
+                      {item.badge === "SAVE" &&
+                        `SAVE ${item.discountPercentage}%`}
                     </div>
                   )}
                 </div>
@@ -161,7 +166,7 @@ const RecentlyViewed = () => {
                 {/* Product Name */}
                 <BodyText
                   variant="b_small"
-                  weight="normal"
+                  weight="bold"
                   className="text-center text-[#1A1A1A] line-clamp-2 mb-2 h-8"
                   title={item.name}
                 >
@@ -173,7 +178,9 @@ const RecentlyViewed = () => {
                   <BodyText
                     variant="b_small"
                     weight="bold"
-                    className={item.originalPrice ? "text-[#F1352B]" : "text-[#1A1A1A]"}
+                    className={
+                      item.originalPrice ? "text-[#F1352B]" : "text-[#1A1A1A]"
+                    }
                   >
                     Rs. {item.price}/-
                   </BodyText>

@@ -4,7 +4,7 @@ import { BodyText, Heading } from "../shared/Typography";
 
 const CuratedCard = ({ curated }: { curated: CuratedItem }) => {
   return (
-    <div className="hover:outline hover:outline-[#E2E4EB] rounded-lg p-2">
+    <div className="hover:outline hover:outline-[#E2E4EB] rounded-lg p-2 overflow-hidden">
       <div className="h-57.5 w-full relative space-y-4">
         <Image
           src={curated.image}

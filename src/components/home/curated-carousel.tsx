@@ -1,8 +1,10 @@
+"use client";
 import { CURATED_ITEMS } from "@/data/curated";
 import CuratedCard from "./curated-card";
+import useVisibleItems from "@/hooks/useVisibleItems";
 
 const CuratedCarousel = ({ currentIndex }: { currentIndex: number }) => {
-  const CAROUSEL_VISIBLE_ITEMS = 4;
+  const CAROUSEL_VISIBLE_ITEMS = useVisibleItems({ sm: 1, md: 2, lg: 4 });
 
   return (
     <div className="overflow-hidden">

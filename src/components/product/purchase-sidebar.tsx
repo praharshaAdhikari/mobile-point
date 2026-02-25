@@ -6,8 +6,8 @@ import {
   FavouriteIcon,
   ArrowTurnBackwardIcon,
   Tick02Icon,
-  LocationPinpoint01Icon,
-  SubtractSquareIcon,
+  // LocationPinpoint01Icon,
+  MinusSignSquareIcon,
   AddSquareIcon,
 } from "@hugeicons/core-free-icons";
 
@@ -33,7 +33,7 @@ const QuantitySelector = ({
         className="px-3 py-2 hover:bg-[#F0F0F0] transition-colors cursor-pointer"
         aria-label="Decrease quantity"
       >
-        <HugeiconsIcon icon={SubtractSquareIcon} size={18} color="#666666" />
+        <HugeiconsIcon icon={MinusSignSquareIcon} size={18} color="#666666" />
       </button>
       <span className="px-4 py-2 text-sm font-semibold min-w-[40px] text-center border-x border-[#E5E5E5]">
         {quantity}
@@ -53,7 +53,11 @@ const SafeCheckoutBadges = () => {
   const badges = ["Visa", "Mastercard", "PayPal", "Stripe", "Khalti"];
   return (
     <div className="pt-5 border-t border-[#E5E5E5]">
-      <BodyText variant="b_xs" weight="bold" className="text-[#666666] text-center pb-2">
+      <BodyText
+        variant="b_xs"
+        weight="bold"
+        className="text-[#666666] text-center pb-2"
+      >
         {"Guaranteed Safe Checkout"}
       </BodyText>
       <div className="flex items-center justify-center gap-2 flex-wrap">
@@ -88,8 +92,7 @@ const PurchaseSidebar = ({ price, inStock, emi }: PurchaseSidebarProps) => {
       {/* EMI info */}
       {emi && (
         <BodyText variant="b_xs" className="text-[#C40EDC]">
-          {emi}{" "}
-          <span className="underline cursor-pointer">{"See more"}</span>
+          {emi} <span className="underline cursor-pointer">{"See more"}</span>
         </BodyText>
       )}
 
@@ -102,7 +105,11 @@ const PurchaseSidebar = ({ price, inStock, emi }: PurchaseSidebarProps) => {
           strokeWidth={4}
           color="white"
         />
-        <BodyText variant="b_small" weight="medium" className={inStock ? "text-[#22DD22]" : "text-[#F1352B]"}>
+        <BodyText
+          variant="b_small"
+          weight="medium"
+          className={inStock ? "text-[#22DD22]" : "text-[#F1352B]"}
+        >
           {inStock ? "In stock" : "Out of stock"}
         </BodyText>
       </div>
@@ -153,10 +160,16 @@ const PurchaseSidebar = ({ price, inStock, emi }: PurchaseSidebarProps) => {
 
       {/* Ships from */}
       <div className="flex items-center gap-1.5 pt-2 border-t border-[#E5E5E5]">
-        <HugeiconsIcon icon={LocationPinpoint01Icon} size={16} color="#999999" />
+        {/* <HugeiconsIcon
+          icon={LocationPinpoint01Icon}
+          size={16}
+          color="#999999"
+        /> */}
         <BodyText variant="b_xs" className="text-[#999999]">
           {"Ships from "}
-          <span className="text-[#C40EDC] underline cursor-pointer">{"Kathmandu"}</span>
+          <span className="text-[#C40EDC] underline cursor-pointer">
+            {"Kathmandu"}
+          </span>
         </BodyText>
       </div>
     </div>

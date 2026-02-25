@@ -16,8 +16,8 @@ const TopItems = () => {
           <BodyText variant="b_small">{"View All"}</BodyText>
         </Link>
       </div>
-      <div className="flex justify-between gap-12 border-b border-[#99999944] pb-8">
-        <div className="flex-1 shrink-0 h-50 relative">
+      <div className="flex flex-col md:flex-row justify-between gap-6 md:gap-12 border-b border-[#99999944] pb-8">
+        <div className="w-full md:flex-1 shrink-0 h-50 relative">
           <Image
             src={"/images/banners/one.jpg"}
             alt={"Top cellphones and tablets"}
@@ -25,7 +25,7 @@ const TopItems = () => {
             className="object-cover rounded-xl"
           />
         </div>
-        <div className="flex-1 grid grid-cols-3 gap-6">
+        <div className="flex-1 grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
           {TOP_CATEGORIES.map((category) => (
             <div
               key={category.id}

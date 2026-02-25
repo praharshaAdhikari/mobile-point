@@ -11,9 +11,15 @@ const DescriptionContent = () => {
       {/* Main description */}
       <div>
         <BodyText variant="b_small" className="text-[#666666] leading-relaxed!">
-          {"Built for ultra-fast performance, the thin and lightweight Samsung Galaxy Tab S2 goes anywhere you go. Photos, movies and documents pop on a crisp, clear Super AMOLED display. Expandable memory lets you enjoy more of your favorite content. And connecting and sharing between all your Samsung devices is easier than ever. Welcome to life with the reimagined Samsung Galaxy Tab S2. Watch then world come to life on your tablet's "}
-          <span className="font-bold text-foreground">{"Super AMOLED display *"}</span>
-          {" . With deep contrast, rich colors and crisp details, you won't miss a thing."}
+          {
+            "Built for ultra-fast performance, the thin and lightweight Samsung Galaxy Tab S2 goes anywhere you go. Photos, movies and documents pop on a crisp, clear Super AMOLED display. Expandable memory lets you enjoy more of your favorite content. And connecting and sharing between all your Samsung devices is easier than ever. Welcome to life with the reimagined Samsung Galaxy Tab S2. Watch then world come to life on your tablet's "
+          }
+          <span className="font-bold text-foreground">
+            {"Super AMOLED display *"}
+          </span>
+          {
+            " . With deep contrast, rich colors and crisp details, you won't miss a thing."
+          }
         </BodyText>
       </div>
 
@@ -27,7 +33,9 @@ const DescriptionContent = () => {
         />
       </div>
       <BodyText variant="b_xs" className="text-[#999999] text-center italic">
-        {"* The Galaxy Tab S2's 9 - 3 ratio display provides an ideal environment for performing office tasks."}
+        {
+          "* The Galaxy Tab S2's 9 - 3 ratio display provides an ideal environment for performing office tasks."
+        }
       </BodyText>
 
       {/* From the manufacturer */}
@@ -36,10 +44,17 @@ const DescriptionContent = () => {
           {"From the manufacturer"}
         </Heading>
         <BodyText variant="b_small" className="text-[#666666] leading-relaxed!">
-          {"Dive into the blockbuster movies you can't wait to see. Switch between your favorite apps quickly and easily. The new and improved octa-core processor gives you the power and speed you need to see more and do more. Expand your tablet's memory from 32GB to up to an additional 128GB and enjoy more of your favorite music, photos, movies and games on the go with a microSD card. With Quick Connect, start a show on your Smart TV and, with the touch of a button, take it with you by moving it to your Galaxy Tab S2."}
+          {
+            "Dive into the blockbuster movies you can't wait to see. Switch between your favorite apps quickly and easily. The new and improved octa-core processor gives you the power and speed you need to see more and do more. Expand your tablet's memory from 32GB to up to an additional 128GB and enjoy more of your favorite music, photos, movies and games on the go with a microSD card. With Quick Connect, start a show on your Smart TV and, with the touch of a button, take it with you by moving it to your Galaxy Tab S2."
+          }
         </BodyText>
-        <BodyText variant="b_small" className="text-[#666666] leading-relaxed! pt-3">
-          {"Or send videos and photos from your tablet screen to your TV screen to share with everyone in the room. Work effortlessly between your Samsung tablet and Samsung smartphone with SideSync. Quickly drag and drop photos between devices. And even respond to a call from your smartphone right on your tablet screen."}
+        <BodyText
+          variant="b_small"
+          className="text-[#666666] leading-relaxed! pt-3"
+        >
+          {
+            "Or send videos and photos from your tablet screen to your TV screen to share with everyone in the room. Work effortlessly between your Samsung tablet and Samsung smartphone with SideSync. Quickly drag and drop photos between devices. And even respond to a call from your smartphone right on your tablet screen."
+          }
         </BodyText>
       </div>
 
@@ -77,7 +92,9 @@ const DescriptionContent = () => {
           {"Samsung Galaxy Tab S2, 8-Inch, White"}
         </Heading>
         <BodyText variant="b_small" className="text-[#666666] leading-relaxed!">
-          {"The Samsung Galaxy Tab S2 offers dual cameras: a rear facing 8-megapixel camera with Auto Focus and a 2.1-megapixel camera on the front. Take high-quality pictures and video or video chat with friends, family, and colleagues. Customize your Galaxy Tab S2 with the apps you use most. The Samsung Galaxy Essentials widget provides a collection of premium complimentary apps optimized for your tablet screen. Select and download the apps you want to instantly upgrade your mobile experience."}
+          {
+            "The Samsung Galaxy Tab S2 offers dual cameras: a rear facing 8-megapixel camera with Auto Focus and a 2.1-megapixel camera on the front. Take high-quality pictures and video or video chat with friends, family, and colleagues. Customize your Galaxy Tab S2 with the apps you use most. The Samsung Galaxy Essentials widget provides a collection of premium complimentary apps optimized for your tablet screen. Select and download the apps you want to instantly upgrade your mobile experience."
+          }
         </BodyText>
       </div>
 
@@ -124,7 +141,10 @@ const AdditionalInfoContent = () => {
       <table className="w-full">
         <tbody>
           {specs.map((spec, index) => (
-            <tr key={index} className={index % 2 === 0 ? "bg-[#F8F8F8]" : "bg-white"}>
+            <tr
+              key={index}
+              className={index % 2 === 0 ? "bg-[#F8F8F8]" : "bg-white"}
+            >
               <td className="py-2.5 px-4 w-48">
                 <BodyText variant="b_small" weight="bold">
                   {spec.label}
@@ -155,7 +175,7 @@ const ProductTabs = () => {
   return (
     <div className="capsule bg-white rounded-xl p-6 shadow-sm">
       {/* Tab headers */}
-      <div className="flex gap-8 border-b border-[#E5E5E5]">
+      <div className="flex gap-4 sm:gap-8 border-b border-[#E5E5E5] overflow-x-auto">
         {TABS.map((tab, index) => (
           <button
             key={index}

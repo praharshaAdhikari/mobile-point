@@ -16,7 +16,7 @@ const Homepage = () => {
       <div className="my-4">
         <Browse />
       </div>
-      <div className="capsule my-4 grid gap-4 grid-cols-2 px-0">
+      <div className="capsule my-4 grid gap-4 grid-cols-1 md:grid-cols-2 px-0">
         <Brands />
         <TopCategories />
       </div>

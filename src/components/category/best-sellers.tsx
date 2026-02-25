@@ -6,6 +6,7 @@ import { ChevronLeft, ChevronRight } from "@hugeicons/core-free-icons";
 import { ITEMS, Item } from "@/data/items";
 import { CATEGORIES } from "@/data/categories";
 import ItemCard from "@/components/home/item-card";
+import useVisibleItems from "@/hooks/useVisibleItems";
 
 const SIDEBAR_CATEGORIES = [
   "All",
@@ -15,18 +16,10 @@ const SIDEBAR_CATEGORIES = [
   "Acer",
   "Oppo",
   "Gaming Smartphone",
-  "Sony",
-  "Window Tablets",
-  "eReader",
-  "Smartphone Accessories",
-  "5G Support Smartphone",
-  "Smartphone Accessories",
-  "Tablets Accessories",
-  "Cell Phones",
 ];
 
 const BEST_SELLER_ITEMS = ITEMS.filter((item) =>
-  item.tag.includes("Best Seller")
+  item.tag.includes("Best Seller"),
 );
 
 const CategorySidebar = ({
@@ -62,7 +55,10 @@ const CategorySidebar = ({
                 : "text-[#666666] hover:text-foreground"
             }`}
           >
-            <BodyText variant="b_small" weight={activeCategory === index ? "medium" : "normal"}>
+            <BodyText
+              variant="b_small"
+              weight={activeCategory === index ? "medium" : "normal"}
+            >
               {cat}
             </BodyText>
           </button>
@@ -75,8 +71,13 @@ const CategorySidebar = ({
 const BestSellers = () => {
   const [activeCategory, setActiveCategory] = React.useState(0);
   const [carouselIndex, setCarouselIndex] = React.useState(0);
-  const visibleItems = 4;
+  const visibleItems = useVisibleItems({ sm: 2, md: 3, lg: 4 });
   const maxIndex = Math.max(0, BEST_SELLER_ITEMS.length - visibleItems);
+
+  // Reset index if it exceeds new maxIndex on resize
+  React.useEffect(() => {
+    if (carouselIndex > maxIndex) setCarouselIndex(maxIndex);
+  }, [maxIndex, carouselIndex]);
 
   const handlePrev = () => {
     if (carouselIndex > 0) setCarouselIndex((p) => p - 1);

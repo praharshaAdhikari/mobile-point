@@ -28,9 +28,9 @@ const Browse = () => {
   // }
   const data = CATEGORIES;
   return (
-    <div className="capsule p-0 grid grid-cols-1 md:grid-cols-4 md:grid-rows-9 gap-4 h-screen max-h-212.5">
+    <div className="capsule p-0 grid grid-cols-1 md:grid-cols-4 md:grid-rows-9 gap-4 md:h-screen md:max-h-130">
       {/* Categories Menu */}
-      <div className="order-1 md:col-span-1 md:row-span-6 bg-white border border-white/50 rounded-xl p-6 shadow-sm flex flex-col overflow-hidden">
+      <div className="order-1 md:col-span-1 md:row-span-6 bg-white border border-white/50 rounded-xl p-6 shadow-sm flex flex-col overflow-hidden max-h-80 md:max-h-none">
         <BodyText
           variant="b_one"
           weight="bold"
@@ -99,7 +99,7 @@ const Browse = () => {
       </div>
 
       {/* Image Grid Items */}
-      <div className="order-2 bg-[#EBEEF6] rounded-xl md:col-span-2 md:row-span-6 relative group overflow-hidden">
+      <div className="order-2 bg-[#EBEEF6] rounded-xl md:col-span-2 md:row-span-6 relative group overflow-hidden min-h-60 md:min-h-0">
         <Image
           src="/images/browse/one.jpg"
           alt="one"
@@ -108,7 +108,7 @@ const Browse = () => {
           className="rounded-xl object-cover group-hover:scale-105 transition-transform duration-500"
         />
       </div>
-      <div className="order-3 bg-[#EBEEF6] rounded-xl md:col-span-1 md:row-span-4 relative group overflow-hidden">
+      <div className="order-3 bg-[#EBEEF6] rounded-xl md:col-span-1 md:row-span-4 relative group overflow-hidden min-h-48 md:min-h-0">
         <Image
           src="/images/browse/two.jpg"
           alt="two"
@@ -116,7 +116,7 @@ const Browse = () => {
           className="rounded-xl object-cover group-hover:scale-105 transition-transform duration-500"
         />
       </div>
-      <div className="order-4 bg-[#EBEEF6] rounded-xl md:col-span-1 md:row-span-5 relative group overflow-hidden">
+      <div className="order-4 bg-[#EBEEF6] rounded-xl md:col-span-1 md:row-span-5 relative group overflow-hidden min-h-48 md:min-h-0">
         <Image
           src="/images/browse/five.jpg"
           alt="five"
@@ -124,7 +124,7 @@ const Browse = () => {
           className="rounded-xl object-cover group-hover:scale-105 transition-transform duration-500"
         />
       </div>
-      <div className="order-6 bg-[#EBEEF6] rounded-xl md:col-span-1 md:row-span-3 relative group overflow-hidden">
+      <div className="order-6 bg-[#EBEEF6] rounded-xl md:col-span-1 md:row-span-3 relative group overflow-hidden min-h-48 md:min-h-0">
         <Image
           src="/images/browse/three.jpg"
           alt="three"
@@ -132,7 +132,7 @@ const Browse = () => {
           className="rounded-xl object-cover group-hover:scale-105 transition-transform duration-500"
         />
       </div>
-      <div className="order-7 bg-[#EBEEF6] rounded-xl md:col-span-1 md:row-span-3 relative group overflow-hidden">
+      <div className="order-7 bg-[#EBEEF6] rounded-xl md:col-span-1 md:row-span-3 relative group overflow-hidden min-h-48 md:min-h-0">
         <Image
           src="/images/browse/four.jpg"
           alt="four"

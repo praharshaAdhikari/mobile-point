@@ -9,7 +9,7 @@ import { ITEMS } from "@/data/items";
 const BUNDLE_ITEMS = ITEMS.slice(0, 3);
 const BUNDLE_TOTAL = BUNDLE_ITEMS.reduce(
   (sum, item) => sum + item.variants[0].price,
-  0
+  0,
 );
 
 const PROMO_ITEMS = ITEMS.slice(3, 5);
@@ -92,7 +92,7 @@ const FrequentlyBoughtTogether = () => {
         </div>
 
         {/* Side promo banner */}
-        <div className="hidden xl:flex flex-col gap-3 w-56 shrink-0">
+        {/* <div className="hidden xl:flex flex-col gap-3 w-56 shrink-0">
           {PROMO_ITEMS.map((item) => (
             <div
               key={item.id}
@@ -119,7 +119,7 @@ const FrequentlyBoughtTogether = () => {
               />
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -28,19 +28,26 @@ const CATEGORIES_LIST = [
 const BRANDS = [
   { name: "envato", count: 14, logo: "/placeholder.svg?height=20&width=60" },
   { name: "Sketchicon", count: 6, logo: "/placeholder.svg?height=20&width=60" },
-  { name: "kleeberries", count: 7, logo: "/placeholder.svg?height=20&width=60" },
-  { name: "photodevice", count: 16, logo: "/placeholder.svg?height=20&width=60" },
-  { name: "mixblearrow", count: 1, logo: "/placeholder.svg?height=20&width=60" },
+  {
+    name: "kleeberries",
+    count: 7,
+    logo: "/placeholder.svg?height=20&width=60",
+  },
+  {
+    name: "photodevice",
+    count: 16,
+    logo: "/placeholder.svg?height=20&width=60",
+  },
+  {
+    name: "mixblearrow",
+    count: 1,
+    logo: "/placeholder.svg?height=20&width=60",
+  },
 ];
 
 const RATINGS = [5, 4, 3, 2, 1];
 
-const SCREEN_SIZES = [
-  '7" & Under',
-  '7" - 8.9"',
-  '9" - 10.9"',
-  '11" & Greater',
-];
+const SCREEN_SIZES = ['7" & Under', '7" - 8.9"', '9" - 10.9"', '11" & Greater'];
 
 const COLORS = [
   "#C63D3D",
@@ -82,7 +89,11 @@ const FilterSection = ({
 }) => (
   <div className="py-4 border-b border-[#E8E8E8]">
     <div className="flex items-center justify-between pb-3">
-      <BodyText variant="b_small" weight="bold" className="uppercase text-[#1A1A1A]">
+      <BodyText
+        variant="b_small"
+        weight="bold"
+        className="uppercase text-[#1A1A1A]"
+      >
         {title}
       </BodyText>
       {showResetAll && (
@@ -102,40 +113,48 @@ const FilterSection = ({
 
 const FiltersSidebar = () => {
   const [selectedBrands, setSelectedBrands] = React.useState<string[]>([]);
-  const [priceRange, setPriceRange] = React.useState<[number, number]>([2500, 10000]);
-  const [selectedRating, setSelectedRating] = React.useState<number | null>(null);
-  const [selectedScreenSizes, setSelectedScreenSizes] = React.useState<string[]>([]);
+  const [priceRange, setPriceRange] = React.useState<[number, number]>([
+    2500, 10000,
+  ]);
+  const [selectedRating, setSelectedRating] = React.useState<number | null>(
+    null,
+  );
+  const [selectedScreenSizes, setSelectedScreenSizes] = React.useState<
+    string[]
+  >([]);
   const [selectedColors, setSelectedColors] = React.useState<string[]>([]);
   const [selectedMemory, setSelectedMemory] = React.useState<string[]>([]);
-  const [selectedConditions, setSelectedConditions] = React.useState<string[]>([]);
+  const [selectedConditions, setSelectedConditions] = React.useState<string[]>(
+    [],
+  );
 
   const toggleBrand = (brand: string) => {
     setSelectedBrands((prev) =>
-      prev.includes(brand) ? prev.filter((b) => b !== brand) : [...prev, brand]
+      prev.includes(brand) ? prev.filter((b) => b !== brand) : [...prev, brand],
     );
   };
 
   const toggleScreenSize = (size: string) => {
     setSelectedScreenSizes((prev) =>
-      prev.includes(size) ? prev.filter((s) => s !== size) : [...prev, size]
+      prev.includes(size) ? prev.filter((s) => s !== size) : [...prev, size],
     );
   };
 
   const toggleColor = (color: string) => {
     setSelectedColors((prev) =>
-      prev.includes(color) ? prev.filter((c) => c !== color) : [...prev, color]
+      prev.includes(color) ? prev.filter((c) => c !== color) : [...prev, color],
     );
   };
 
   const toggleMemory = (mem: string) => {
     setSelectedMemory((prev) =>
-      prev.includes(mem) ? prev.filter((m) => m !== mem) : [...prev, mem]
+      prev.includes(mem) ? prev.filter((m) => m !== mem) : [...prev, mem],
     );
   };
 
   const toggleCondition = (cond: string) => {
     setSelectedConditions((prev) =>
-      prev.includes(cond) ? prev.filter((c) => c !== cond) : [...prev, cond]
+      prev.includes(cond) ? prev.filter((c) => c !== cond) : [...prev, cond],
     );
   };
 
@@ -181,7 +200,9 @@ const FiltersSidebar = () => {
       </div>
 
       {/* Active Filters Tags */}
-      {(priceRange[0] > 0 || priceRange[1] < 10000 || selectedScreenSizes.length > 0) && (
+      {(priceRange[0] > 0 ||
+        priceRange[1] < 10000 ||
+        selectedScreenSizes.length > 0) && (
         <div className="py-4 border-b border-[#E8E8E8] space-y-2">
           <div className="flex flex-wrap gap-2">
             {priceRange[0] > 0 && (
@@ -190,7 +211,10 @@ const FiltersSidebar = () => {
               </span>
             )}
             {selectedScreenSizes.map((size) => (
-              <span key={size} className="px-3 py-1 bg-white border border-[#E8E8E8] rounded-full">
+              <span
+                key={size}
+                className="px-3 py-1 bg-white border border-[#E8E8E8] rounded-full"
+              >
                 <BodyText variant="b_xs">{size}</BodyText>
               </span>
             ))}
@@ -220,10 +244,19 @@ const FiltersSidebar = () => {
                 }`}
               >
                 {selectedBrands.includes(brand.name) && (
-                  <HugeiconsIcon icon={Tick02Icon} size={10} color="white" strokeWidth={4} />
+                  <HugeiconsIcon
+                    icon={Tick02Icon}
+                    size={10}
+                    color="white"
+                    strokeWidth={4}
+                  />
                 )}
               </div>
-              <BodyText variant="b_xs" weight="normal" className="text-[#1A1A1A]">
+              <BodyText
+                variant="b_xs"
+                weight="normal"
+                className="text-[#1A1A1A]"
+              >
                 {brand.name}
               </BodyText>
               <BodyText variant="b_xs" className="text-[#999999] ml-auto">
@@ -242,25 +275,35 @@ const FiltersSidebar = () => {
             min={0}
             max={10000}
             value={priceRange[1]}
-            onChange={(e) => setPriceRange([priceRange[0], parseInt(e.target.value)])}
+            onChange={(e) =>
+              setPriceRange([priceRange[0], parseInt(e.target.value)])
+            }
             className="w-full accent-[#22DD22]"
           />
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-1 px-2 py-1 border border-[#CCCCCC] rounded text-center flex-1 bg-white">
-              <BodyText variant="b_xs" className="text-[#666666]">Rs.</BodyText>
+              <BodyText variant="b_xs" className="text-[#666666]">
+                Rs.
+              </BodyText>
               <input
                 type="number"
                 value={priceRange[0]}
-                onChange={(e) => setPriceRange([parseInt(e.target.value) || 0, priceRange[1]])}
+                onChange={(e) =>
+                  setPriceRange([parseInt(e.target.value) || 0, priceRange[1]])
+                }
                 className="w-full text-xs outline-none bg-transparent text-[#1A1A1A]"
               />
             </div>
             <div className="flex items-center gap-1 px-2 py-1 border border-[#CCCCCC] rounded text-center flex-1 bg-white">
-              <BodyText variant="b_xs" className="text-[#666666]">Rs.</BodyText>
+              <BodyText variant="b_xs" className="text-[#666666]">
+                Rs.
+              </BodyText>
               <input
                 type="number"
                 value={priceRange[1]}
-                onChange={(e) => setPriceRange([priceRange[0], parseInt(e.target.value) || 0])}
+                onChange={(e) =>
+                  setPriceRange([priceRange[0], parseInt(e.target.value) || 0])
+                }
                 className="w-full text-xs outline-none bg-transparent text-[#1A1A1A]"
               />
             </div>
@@ -275,7 +318,10 @@ const FiltersSidebar = () => {
       <FilterSection title="By Rating">
         <div className="flex flex-col gap-1.5">
           {RATINGS.map((rating) => (
-            <label key={rating} className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity">
+            <label
+              key={rating}
+              className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity"
+            >
               <input
                 type="radio"
                 name="rating"
@@ -397,7 +443,12 @@ const FiltersSidebar = () => {
                 }`}
               >
                 {selectedConditions.includes(cond.label) && (
-                  <HugeiconsIcon icon={Tick02Icon} size={10} color="white" strokeWidth={4} />
+                  <HugeiconsIcon
+                    icon={Tick02Icon}
+                    size={10}
+                    color="white"
+                    strokeWidth={4}
+                  />
                 )}
               </div>
               <BodyText variant="b_xs" className="text-[#1A1A1A]">

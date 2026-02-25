@@ -119,7 +119,7 @@ const CategoryItem = ({
   category: (typeof CATEGORIES)[number];
 }) => {
   return (
-    <div className="rounded-lg p-8 bg-white shadow-sm">
+    <div className="rounded-lg p-8 bg-white shadow-sm overflow-hidden">
       <div className="flex items-center justify-between pb-8">
         <Heading variant="h3" className="uppercase font-bold">
           {category.name}
@@ -174,7 +174,7 @@ const CategoryItem = ({
 
 const CategoryGrid = () => {
   return (
-    <div className="capsule px-0! grid grid-cols-3 gap-x-2">
+    <div className="capsule px-0! grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-2 gap-y-4">
       {CATEGORIES.map((category) => (
         <CategoryItem key={category.id} category={category} />
       ))}

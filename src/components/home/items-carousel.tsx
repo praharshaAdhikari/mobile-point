@@ -4,15 +4,21 @@ import ItemCard from "./item-card";
 import { Item } from "@/data/items";
 import { ChevronLeft, ChevronRight } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
+import useVisibleItems from "@/hooks/useVisibleItems";
 
 const ItemsCarousel = ({ items }: { items: Item[] }) => {
-  const CAROUSEL_VISIBLE_ITEMS = 5;
+  const CAROUSEL_VISIBLE_ITEMS = useVisibleItems({ sm: 2, md: 3, lg: 5 });
   const [currentIndex, setCurrentIndex] = React.useState(0);
   const [isTransitioning, setIsTransitioning] = React.useState(false);
   const carouselRef = React.useRef<HTMLDivElement>(null);
 
   const totalItems = items.length;
   const maxIndex = Math.max(0, totalItems - CAROUSEL_VISIBLE_ITEMS);
+
+  // Reset index if it exceeds new maxIndex on resize
+  React.useEffect(() => {
+    if (currentIndex > maxIndex) setCurrentIndex(maxIndex);
+  }, [maxIndex, currentIndex]);
 
   const handlePrevious = () => {
     if (currentIndex > 0 && !isTransitioning) {

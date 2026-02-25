@@ -34,7 +34,11 @@ const CategoryBanner = ({ title }: { title: string }) => {
             className="object-cover opacity-80"
           />
           <div className="absolute inset-0 flex flex-col justify-center px-8 text-white z-10">
-            <BodyText variant="b_small" weight="medium" className="text-white/80 uppercase tracking-wider">
+            <BodyText
+              variant="b_small"
+              weight="medium"
+              className="text-white/80 uppercase tracking-wider"
+            >
               {"Noise Cancelling"}
             </BodyText>
             <Heading variant="h2" className="font-bold text-white">
@@ -76,7 +80,7 @@ const CategoryBanner = ({ title }: { title: string }) => {
             fill
             className="object-cover"
           />
-          <div className="absolute inset-0 flex flex-col justify-start px-6 pt-6 z-10">
+          {/* <div className="absolute inset-0 flex flex-col justify-start px-6 pt-6 z-10">
             <Heading variant="h4" className="font-bold">
               {"redmi note 12"}
             </Heading>
@@ -86,7 +90,7 @@ const CategoryBanner = ({ title }: { title: string }) => {
             <BodyText variant="b_xs" className="text-[#666666] mt-1">
               {"Rise to the challenge"}
             </BodyText>
-          </div>
+          </div> */}
           <button className="absolute top-4 right-4 bg-[#22DD22] text-white px-4 py-1.5 rounded-md text-xs font-bold uppercase z-10 hover:bg-[#1ec51e] transition-colors">
             {"SHOP NOW"}
           </button>
