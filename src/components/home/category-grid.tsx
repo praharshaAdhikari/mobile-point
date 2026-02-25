@@ -1,19 +1,130 @@
-"use client";
 import Link from "next/link";
 import { BodyText, Heading } from "../shared/Typography";
 import Image from "next/image";
-import useCategory from "@/api/hooks/useCategory";
-import { Category } from "@/api/endpoints/category";
-import { CATEGORIES } from "@/data/categories";
 
-const CategoryItem = ({ category }: { category: Category }) => {
+const CATEGORIES = [
+  {
+    id: 1,
+    name: "Audios and Cameras",
+    link: "/",
+    image: "/images/banners/two.jpg",
+    groups: [
+      {
+        id: 2,
+        name: "Speakers",
+        link: "/",
+        image: "/images/top/seven.png",
+        items: 120,
+      },
+      {
+        id: 3,
+        name: "Headphones",
+        link: "/",
+        image: "/images/top/eight.png",
+        items: 85,
+      },
+      {
+        id: 4,
+        name: "Cameras",
+        link: "/",
+        image: "/images/top/nine.png",
+        items: 45,
+      },
+      {
+        id: 5,
+        name: "Microphones",
+        link: "/",
+        image: "/images/top/ten.png",
+        items: 62,
+      },
+    ],
+  },
+  {
+    id: 6,
+    name: "Gaming",
+    link: "/",
+    image: "/images/banners/three.jpg",
+    groups: [
+      {
+        id: 7,
+        name: "Monitors",
+        link: "/",
+        image: "/images/top/eleven.png",
+        items: 34,
+      },
+      {
+        id: 8,
+        name: "Keyboards",
+        link: "/",
+        image: "/images/top/twelve.png",
+        items: 78,
+      },
+      {
+        id: 9,
+        name: "Mice",
+        link: "/",
+        image: "/images/top/thirteen.png",
+        items: 92,
+      },
+      {
+        id: 10,
+        name: "Controllers",
+        link: "/",
+        image: "/images/top/fourteen.png",
+        items: 56,
+      },
+    ],
+  },
+  {
+    id: 11,
+    name: "Office Equipments",
+    link: "/",
+    image: "/images/banners/four.jpg",
+    groups: [
+      {
+        id: 12,
+        name: "Printers",
+        link: "/",
+        image: "/images/top/fifteen.png",
+        items: 9,
+      },
+      {
+        id: 13,
+        name: "Scanners",
+        link: "/",
+        image: "/images/top/sixteen.png",
+        items: 15,
+      },
+      {
+        id: 14,
+        name: "Projectors",
+        link: "/",
+        image: "/images/top/seventeen.png",
+        items: 23,
+      },
+      {
+        id: 15,
+        name: "Shredders",
+        link: "/",
+        image: "/images/top/eighteen.png",
+        items: 12,
+      },
+    ],
+  },
+];
+
+const CategoryItem = ({
+  category,
+}: {
+  category: (typeof CATEGORIES)[number];
+}) => {
   return (
-    <div className="rounded-lg p-8 bg-white shadow-sm">
+    <div className="rounded-lg p-8 bg-white shadow-sm overflow-hidden">
       <div className="flex items-center justify-between pb-8">
         <Heading variant="h3" className="uppercase font-bold">
           {category.name}
         </Heading>
-        <Link href={category.slug} className="text-[#666666] hover:underline">
+        <Link href={category.link} className="text-[#666666] hover:underline">
           <BodyText variant="b_small">{"View All"}</BodyText>
         </Link>
       </div>
@@ -28,10 +139,10 @@ const CategoryItem = ({ category }: { category: Category }) => {
         </div>
       </div>
       <div className="grid grid-cols-2">
-        {category.children.map((group) => (
+        {category.groups.map((group) => (
           <Link
             key={group.id}
-            href={group.slug}
+            href={group.link}
             className="flex flex-col items-center justify-between py-4 hover:outline hover:outline-[#E2E4EB] rounded-lg"
           >
             <div className="size-30 relative">
@@ -52,7 +163,7 @@ const CategoryItem = ({ category }: { category: Category }) => {
               variant="b_small"
               className="text-[#666666] leading-4! line-clamp-2"
             >
-              {group.total_products} items
+              {group.items} items
             </BodyText>
           </Link>
         ))}
@@ -62,28 +173,9 @@ const CategoryItem = ({ category }: { category: Category }) => {
 };
 
 const CategoryGrid = () => {
-  // const { data, isLoading, isError } = useCategory();
-
-  // if (isLoading) {
-  //   return (
-  //     <div className="capsule px-0! grid grid-cols-3 gap-x-2">
-  //       <BodyText variant="b_small">{"Loading..."}</BodyText>
-  //     </div>
-  //   );
-  // }
-
-  // if (isError) {
-  //   return (
-  //     <div className="capsule px-0! grid grid-cols-3 gap-x-2">
-  //       <BodyText variant="b_small">{"Error loading categories"}</BodyText>
-  //     </div>
-  //   );
-  // }
-  const data = CATEGORIES;
-
   return (
-    <div className="capsule px-0! grid grid-cols-3 gap-x-2">
-      {data?.results.map((category) => (
+    <div className="capsule px-0! grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-2 gap-y-4">
+      {CATEGORIES.map((category) => (
         <CategoryItem key={category.id} category={category} />
       ))}
     </div>

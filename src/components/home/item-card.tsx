@@ -105,6 +105,8 @@ const ItemTag = ({
   );
 };
 
+import { useRouter } from "next/navigation";
+
 const ItemVariant = ({
   variants,
   selectedVariant,
@@ -144,6 +146,7 @@ const ItemVariant = ({
 };
 
 const ItemCard = ({ item }: { item: Item }) => {
+  const router = useRouter();
   const [currentVariant, setCurrentVariant] = React.useState<number>(0);
 
   const discountedPrice = item.discount
@@ -151,8 +154,16 @@ const ItemCard = ({ item }: { item: Item }) => {
       item.variants[currentVariant].price * item.discount
     : 0;
 
+  const handleCardClick = () => {
+    const productSlug = item.name.toLowerCase().replace(/\s+/g, "-");
+    router.push(`/${item.category}/${productSlug}`);
+  };
+
   return (
-    <div className="p-3 cursor-pointer h-full flex flex-col">
+    <div
+      className="p-3 cursor-pointer h-full flex flex-col overflow-hidden"
+      onClick={handleCardClick}
+    >
       <div className="h-50 w-full relative space-y-4">
         <Image
           src={item.variants[currentVariant].image}
@@ -170,13 +181,13 @@ const ItemCard = ({ item }: { item: Item }) => {
             </BodyText>
           </div>
         )}
-        {item.tag.length > 0 && !item.discount && (
+        {/* {item.tag.length > 0 && !item.discount && (
           <div className="inset-0 absolute top-4 left-7 w-16 h-fit bg-[#22DD22] text-white text-left rounded-md px-2 py-1">
             <BodyText variant="b_xs" className="leading-4!" weight="bold">
               {item.tag[0]}
             </BodyText>
           </div>
-        )}
+        )} */}
       </div>
       {
         <BodyText

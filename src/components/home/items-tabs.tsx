@@ -26,7 +26,7 @@ const ItemsTabs = () => {
   return (
     <div className="capsule bg-white rounded-xl p-6 shadow-sm">
       <div className="flex justify-between items-center pb-4">
-        <div className="flex gap-10">
+        <div className="flex gap-4 md:gap-10 overflow-x-auto">
           {TABS.map((tab, index) => (
             <div
               key={tab}
