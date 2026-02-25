@@ -170,13 +170,13 @@ const ItemCard = ({ item }: { item: Item }) => {
             </BodyText>
           </div>
         )}
-        {item.tag.length > 0 && !item.discount && (
+        {/* {item.tag.length > 0 && !item.discount && (
           <div className="inset-0 absolute top-4 left-7 w-16 h-fit bg-[#22DD22] text-white text-left rounded-md px-2 py-1">
             <BodyText variant="b_xs" className="leading-4!" weight="bold">
               {item.tag[0]}
             </BodyText>
           </div>
-        )}
+        )} */}
       </div>
       {
         <BodyText
